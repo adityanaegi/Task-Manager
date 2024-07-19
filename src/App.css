@@ -1,38 +1,152 @@
-.App {
+:root {
+  --max-width: 100%; /* Default value, but will be dynamically adjusted */
+  --button-width: 10  %;
+}
+
+.app-container {
+  max-width: var(--max-width); /* Use the CSS variable */
+  margin: 20;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  
+  
+}
+
+.webTitle {
+  text-align: left;
+  font-size: 60px;
+}
+
+.add-task-button {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
   text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: var(--button-width);;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add-task-button:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-task-button:main,
+.add-task-button:focus {
+  user-select: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-task-button:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.add-task-button:disabled {
+  cursor: auto;
+}
+
+.add-task-button:active {
+  border-width: 4px 0 0;
+  background: none;
+}
+
+.dashboard {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  background-color: aliceblue;
+  border-color: aqua;
+  border-radius: 30px;
+}
+
+.task-item {
+  border: 1px solid aqua;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.task-item h3 {
+  margin: 0 0 10px;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 20px;
+}
+
+form input, form textarea, form select {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+form button {
+  padding: 10px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+form button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  text-align: left;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
